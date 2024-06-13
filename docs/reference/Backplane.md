@@ -148,7 +148,7 @@ Returns a function that runs `cycle()`, sleeps for `n` seconds, and repeats. If 
 Backplane:updateLayouts (): self
 ```
 
-Trigger eager layout updates on all attached outputs with `updateLayout` functions, such as [ChartLineOutputAdapter](output/ChartLine) and other graphical adapters. Note that "eager" means the outputs will be re-rendered immediately after the layout is updated.
+Trigger eager layout updates on all attached outputs with `updateLayout` functions, such as ~~[ChartLineOutputAdapter](output/ChartLine)~~ and other graphical adapters. Note that "eager" means the outputs will be re-rendered immediately after the layout is updated.
 
 ### `debug`
 
@@ -177,7 +177,7 @@ Set the middleware stack for this Backplane. Middleware will be executed in the 
 ## Usage
 
 ```lua
-local telem = require 'telem'
+local telem = require('telem')
 
 local backplane = telem.backplane()
 
@@ -188,18 +188,18 @@ backplane:addOutput('hello_out', telem.output.helloWorld())
 backplane:cycle()
 
 -- run a cycle every 5 seconds forever
-parallel.waitForAll(
-  backplane:cycleEvery(5),
+local thread_table =  telem.util.list2thread(backplane:cycleEvery(3))
 
-  function ()
-    while true do
-      -- reactor.preventMeltdown()
-      -- animals.feed()
-      -- mission.accomplish()
-      
-      -- REMEMBER TO YIELD!
-      sleep()
-    end
+local othercode = function ()
+  while true do
+    -- reactor.preventMeltdown()
+    -- animals.feed()
+    -- mission.accomplish()
+
+    -- REMEMBER TO YIELD!
+    sleep()
   end
-)
+end
+table.insert(thread_table, thread.create(othercode))
+thread.waitForAny(thread_table)
 ```

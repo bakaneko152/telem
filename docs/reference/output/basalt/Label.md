@@ -14,6 +14,10 @@ telem.output.basalt.label (
 )
 ```
 
+::: danger Disabled Features
+This adapter is not implemented in the OC version of Telem
+:::
+
 ::: warning Peer Dependencies
 Requires **[Basalt 1.7+](https://basalt.madefor.cc/)**. This is **not** included in the installer's dependencies due to size.
 :::

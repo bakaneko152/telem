@@ -8,6 +8,10 @@ outline: deep
 telem.input.refinedStorage (peripheralID: string)
 ```
 
+::: danger Disabled Features
+This adapter is not implemented in the OC version of Telem
+:::
+
 ::: warning Mod Dependencies
 Requires **Refined Storage** and **Advanced Peripherals**.
 :::
