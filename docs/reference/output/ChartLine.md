@@ -13,6 +13,10 @@ telem.output.plotter.line (
   maxEntries: number
 )
 ```
+::: danger Disabled Features
+This adapter is not implemented in the OC version of Telem
+:::
+
 
 ::: tip
 This adapter is [cacheable](/reference/Backplane#cache).

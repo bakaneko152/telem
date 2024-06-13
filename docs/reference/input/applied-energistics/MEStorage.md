@@ -9,12 +9,14 @@ telem.input.meStorage (peripheralID: string)
 ```
 
 ::: warning Mod Dependencies
-Requires **Applied Energistics 2** and **Advanced Peripherals**.
+Requires **Applied Energistics 2**.
 :::
 
-This adapter produces a metric for each item and fluid ID in an ME storage network, with the metric names being the IDs, and the value being the total amount of that item/fluid in storage. Peripheral must be an [Advanced Peripherals ME Bridge](https://docs.advanced-peripherals.de/peripherals/me_bridge/).
+This adapter produces a metric for each item and fluid ID in an ME storage network, with the metric names being the IDs, and the value being the total amount of that item/fluid in storage.
+Peripheral must be [ME Controller](https://appliedenergistics.org/ae2-site-archive/ME-Controller/index.html) or [
+ME Interface](https://appliedenergistics.org/ae2-site-archive/ME-Interface/index.html).
 
-Items that are craftable but not stored are not included in the metrics.
+~~Items that are craftable but not stored are not included in the metrics.~~
 
 ## Usage
 
@@ -36,8 +38,8 @@ This appends the following metrics to the backplane:
   :metrics="[
     {
       name: 'storage:minecraft:lava',
-      value: 29.25,
-      unit: 'B',
+      value: 2925,
+      unit: 'mB',
       adapter: 'my_me',
       source: 'meBridge_0'
     },
