@@ -136,10 +136,11 @@ function Backplane:cycle()
     if not self.loaded and self.cacheState then
         self:dlog('Backplane:cycle :: loading state...')
 
-        local inf = fs.open('/.telem/state', 'r')
+        -- local inf = fs.open('/.telem/state', 'r')
+        local inf = io.open('/tmp/.telem/state', 'r')
 
         if inf then
-            local cache = textutils.unserialize(inf.readAll()) or {}
+            local cache = textutils.unserialize(inf:read("*a")) or {}
             inf.close()
 
             for k, v in pairs(cache) do
@@ -222,11 +223,13 @@ function Backplane:cycle()
                     cache[key] = table.remove(results, 1)
                 end
             end
+            local fs = require("filesystem")
 
-            fs.makeDir('/.telem')
-            local outf = fs.open('/.telem/state', 'w')
+            fs.makeDir('/tmp/.telem')
+            local outf = io.open('/tmp/.telem/state', 'w')
             outf.write(textutils.serialize(cache, { compact = true }))
             outf.flush()
+            outf.close()
 
             self.lastCache = time
         end
