@@ -1,7 +1,7 @@
 # Greg Battery Buffer Input <RepoLink path="lib/input/greg/BatteryBufferInputAdapter.lua" />
 
 ```lua
-telem.input.greg.batterybuffer (
+telem.input.greg.batteryBuffer (
 	peripheralID: string, 
 	slotnum: number,
 	categories?: string[] | '*'
@@ -22,6 +22,6 @@ This adapter produces a metric for most of the available information from a [Bat
 local telem = require 'telem'
 
 local backplane = telem.backplane()
-	:addInput('my_battery', telem.input.greg.batterybuffer('a81a9f51-838f-4d49-9489-e4e418aa9da4',16))
+	:addInput('my_battery', telem.input.greg.batteryBuffer('a81a9f51-838f-4d49-9489-e4e418aa9da4',16))
 	:cycleEvery(5)()
 ```
