@@ -41,7 +41,7 @@ export default defineConfig({
           { text: 'Hello World', link: '/reference/input/HelloWorld' },
           { text: 'Item Storage', link: '/reference/input/ItemStorage' },
           { text: 'Item Storage Drawers', link: '/reference/input/ItemStorageDrawers' },
-          { text: 'Item Storage Transposer', link: '/reference/input/itemStorageTransposer' },
+          { text: 'Item Storage Transposer', link: '/reference/input/ItemStorageTransposer' },
           { text: 'Fluid Storage Transposer', link: '/reference/input/fluidStorageTransposer' },
           { text: 'Modem', link: '/reference/input/Modem' },
           { text: 'Custom', link: '/reference/input/Custom' },

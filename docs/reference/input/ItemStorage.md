@@ -9,7 +9,7 @@ telem.input.itemStorage (peripheralID: string, side: sides.side)
 ```
 
 ::: warning Low Efficiency
-Recommend **[itemStorageTransposer](/reference/input/itemStorageTransposer)**.
+Recommend **[ItemStorageTransposer](/reference/input/ItemStorageTransposer)**.
 :::
 
 Requires **[Inventory Controller Upgrade](https://ocdoc.cil.li/item:inventory_controller_upgrade)**.
