@@ -1,6 +1,6 @@
 <template>
     <a
-        :href="'https://github.com/cyberbit/telem/blob/main/src/telem/' + path"
+        :href="'https://github.com/bakaneko152/telem/blob/master/src/telem/' + path"
         target="_blank"
         style="float: right; font-size: 16px;"
     >{{ label || 'Source' }}</a>
