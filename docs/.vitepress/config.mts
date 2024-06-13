@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Telem",
   description: "Trivial Extract and Load Engine for Minecraft",
+  base: '/telem/',
   cleanUrls: true,
   ignoreDeadLinks: 'localhostLinks',
   markdown: {
@@ -13,7 +14,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Changelog', link: 'https://github.com/cyberbit/telem/releases' }
+      { text: 'Changelog', link: 'https://github.com/bakaneko152/telem/releases' }
     ],
     
     sidebar: [
@@ -101,7 +102,7 @@ export default defineConfig({
     ],
     
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/cyberbit/telem' }
+      { icon: 'github', link: 'https://github.com/bakaneko152/telem' }
     ],
     
     externalLinkIcon: true,
