@@ -42,6 +42,9 @@ Are you tired of creating complex logic to monitor inventory or production? Want
 Run the installer:
 
 ```bash
+pastebin run -f paUSHQQC bakaneko152 telem master src/telem
+mkdir /home/lib
+mv /telem /home/lib/telem
 
 ```
 
