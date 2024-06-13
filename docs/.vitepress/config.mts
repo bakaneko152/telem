@@ -40,23 +40,14 @@ export default defineConfig({
         items: [
           { text: 'Hello World', link: '/reference/input/HelloWorld' },
           { text: 'Item Storage', link: '/reference/input/ItemStorage' },
-          { text: 'Item Storage Drawers', link: '/reference/input/ItemStorageDrawers' },
-          { text: 'Item Storage Transposer', link: '/reference/input/ItemStorageTransposer' },
-          { text: 'Fluid Storage Transposer', link: '/reference/input/fluidStorageTransposer' },
-          { text: 'Modem', link: '/reference/input/Modem' },
+          { text: 'Fluid Storage', link: '/reference/input/FluidStorage' },
+          { text: 'Secure Modem', link: '/reference/input/SecureModem' },
           { text: 'Custom', link: '/reference/input/Custom' },
           {
             text: 'Applied Energistics',
             collapsed: true,
             items: [
               { text: 'ME Storage', link: '/reference/input/applied-energistics/MEStorage' },
-            ]
-          },
-          {
-            text: 'Greg5',
-            collapsed: true,
-            items: [
-              { text: 'Battery Buffer', link: '/reference/input/greg/BatteryBuffer' },
             ]
           },
           {
@@ -85,7 +76,7 @@ export default defineConfig({
           { text: 'Hello World', link: '/reference/output/HelloWorld' },
           { text: 'Line Chart', link: '/reference/output/ChartLine' },
           { text: 'Area Chart', link: '/reference/output/ChartArea' },
-          { text: 'Modem', link: '/reference/output/Modem' },
+          { text: 'Secure Modem', link: '/reference/output/SecureModem' },
           { text: 'Custom', link: '/reference/output/Custom' },
           { text: 'Grafana', link: '/reference/output/Grafana' },
           {
