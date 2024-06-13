@@ -1,5 +1,6 @@
 local o = require 'telem.lib.ObjectModel'
 local t = require 'telem.lib.util'
+local textutils = require 'telem.lib.textutils'
 
 local Metric = o.class()
 Metric.type = 'Metric'

@@ -4,18 +4,17 @@ return {
 
     -- storage
     itemStorage = require 'telem.lib.input.ItemStorageInputAdapter',
-    fluidStorage = require 'telem.lib.input.FluidStorageInputAdapter',
-    refinedStorage = require 'telem.lib.input.RefinedStorageInputAdapter',
+    --fluidStorage = require 'telem.lib.input.FluidStorageInputAdapter',
+    itemStorageTransposer  = require 'telem.lib.input.ItemStorageTransposerInputAdapter',
+    itemStorageDrawers = require 'telem.lib.input.ItemStorageDrawersInputAdapter',
+    fluidStorageTransposer = require 'telem.lib.input.FluidStorageTransposerInputAdapter',
     meStorage = require 'telem.lib.input.MEStorageInputAdapter',
 
     -- machinery
-    mekanism = {
-        fissionReactor = require 'telem.lib.input.mekanism.FissionReactorInputAdapter',
-        inductionMatrix = require 'telem.lib.input.mekanism.InductionMatrixInputAdapter',
-        industrialTurbine = require 'telem.lib.input.mekanism.IndustrialTurbineInputAdapter',
-        fusionReactor = require 'telem.lib.input.mekanism.FusionReactorInputAdapter',
+    greg = {
+        battery = require 'telem.lib.input.greg.BatteryInputAdapter',
     },
 
     -- modem
-    secureModem = require 'telem.lib.input.SecureModemInputAdapter'
+    modem = require 'telem.lib.input.ModemInputAdapter'
 }

@@ -5,6 +5,7 @@ local InputAdapter     = require 'telem.lib.InputAdapter'
 local OutputAdapter    = require 'telem.lib.OutputAdapter'
 local MetricCollection = require 'telem.lib.MetricCollection'
 local Middleware       = require 'telem.lib.BaseMiddleware'
+local textutils = require 'telem.lib.textutils'
 
 local Backplane = o.class()
 Backplane.type = 'Backplane'
