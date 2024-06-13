@@ -12,7 +12,7 @@ return {
 
     -- machinery
     greg = {
-        battery = require 'telem.lib.input.greg.BatteryInputAdapter',
+        batteryBuffer = require 'telem.lib.input.greg.BatteryBufferInputAdapter',
     },
 
     -- modem

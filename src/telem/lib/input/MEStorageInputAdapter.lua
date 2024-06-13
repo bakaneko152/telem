@@ -19,7 +19,7 @@ function AE_get_items(me)
     end
 end
 
-function MEStorageInputAdapter:constructor (peripheralName)
+function MEStorageInputAdapter:constructor (peripheralID)
     self:super('constructor')
 
     -- TODO this will be a configurable feature later
@@ -29,7 +29,7 @@ function MEStorageInputAdapter:constructor (peripheralName)
     self:setBoot(function ()
         self.components = {}
 
-        self:addComponentByPeripheralID(peripheralName)
+        self:addComponentByPeripheralID(peripheralID)
     end)()
 end
 
