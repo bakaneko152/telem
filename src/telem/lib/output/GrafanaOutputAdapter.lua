@@ -4,6 +4,9 @@ local t = require 'telem.lib.util'
 local OutputAdapter     = require 'telem.lib.OutputAdapter'
 local MetricCollection  = require 'telem.lib.MetricCollection'
 
+local component = require("component")
+local internet = require("internet")
+
 local GrafanaOutputAdapter = o.class(OutputAdapter)
 GrafanaOutputAdapter.type = 'GrafanaOutputAdapter'
 
@@ -29,11 +32,18 @@ function GrafanaOutputAdapter:write (collection)
 
     -- t.pprint(collection)
 
-    local res = http.post({
-        url = self.endpoint,
-        body = table.concat(outf, '\n'),
-        headers = { Authorization = ('Bearer %s'):format(self.apiKey) }
-    })
+    -- local res = http.post({
+    --     url = self.endpoint,
+    --     body = table.concat(outf, '\n'),
+    --     headers = { Authorization = ('Bearer %s'):format(self.apiKey) }
+    -- })
+
+    local res = internet.request(
+        self.endpoint,
+        table.concat(outf, '\n'),
+       { Authorization = ('Bearer %s'):format(self.apiKey) }
+    )
+    res.close()
 end
 
 return GrafanaOutputAdapter

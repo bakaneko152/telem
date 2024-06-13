@@ -17,7 +17,7 @@ features:
   - title: Intuitive API
     details: Utilize dozens of built-in inputs and outputs with a simple interface. Or write your own!
   - title: Deep integrations
-    details: First-class support for Mekanism, Applied Energistics, and more
+    details: First-class support for Applied Energistics, and more
 ---
 
 ## Do you love data?
@@ -25,8 +25,8 @@ features:
 Are you tired of creating complex logic to monitor inventory or production? Want something more modern, modular, and scalable? Want something that can empower live dashboards, both in-game and out? You have come to the right place.
 
 ### Extract
-* Connect to item and fluid storage, with specialized support for Refined Storage and Applied Energistics.
-* Monitor Mekanism reactors, turbines, and multiblock energy systems.
+* Connect to item and fluid storage, with specialized support for Storage Drawers and Applied Energistics.
+* ~~Monitor Mekanism reactors, turbines, and multiblock energy systems.~~
 * Write custom adapters to support any block, system, or event that you want to integrate.
 
 ### Transform
@@ -34,20 +34,19 @@ Are you tired of creating complex logic to monitor inventory or production? Want
 * Use custom middleware to apply your own measures, on an input-by-input basis or across the entire data stream.
 
 ### Load
-* Graph your resources over time using Plotter outputs to visually analyze changes in your resource economy.
 * Supports direct output to a Grafana dashboard for historical analysis and real-time monitoring.
-* Use Secure Modem to transmit to a central monitoring hub through encrypted tunnels.
+* Use Modem to transmit to a central monitoring hub through wired or wireless.
 
 ## Quick Start
 
 Run the installer:
 
 ```bash
-wget run https://pinestore.cc/d/14
+
 ```
 
 Then, read the [Getting Started](/getting-started) guide to learn how to use Telem.
 
 ## Requirements
-- CC: Tweaked or CC: Restitched
-- `http` access for installer and certain adapters
+- OpenComputers(I use the GTNH environment)
+- Internet Card for installer/Grafana

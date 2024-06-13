@@ -52,7 +52,7 @@ Sets the async cycle handler to pass to [Backplane](Backplane) and returns it.
 OutputAdapter:addComponentByPeripheralID (id: string)
 ```
 
-This function calls `peripheral.wrap(id)` and appends the result to `self.components` with a key of `id`. If a peripheral was not found, an error is thrown.
+This function calls `component.proxy(id)` and appends the result to `self.components` with a key of `id`. If a component was not found, an error is thrown.
 
 ### `addComponentByPeripheralType`
 
@@ -60,7 +60,7 @@ This function calls `peripheral.wrap(id)` and appends the result to `self.compon
 OutputAdapter:addComponentByPeripheralType (type: string)
 ```
 
-This function calls `peripheral.find(type)` and appends the result to `self.components` with a key of `'type_N'`, where `type` is the specified type and `N` is the current number of assigned components. Below is the result of calling this function multiple times.
+This function calls `component.list(type, false)` and appends the result to `self.components` with a key of `'type_N'`, where `type` is the specified type and `N` is the current number of assigned components. Below is the result of calling this function multiple times.
 
 ```lua
 -- in AlarmOutputAdapter.lua

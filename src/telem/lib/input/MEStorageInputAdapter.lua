@@ -1,3 +1,5 @@
+-- https://github.com/GTNewHorizons/OpenComputers/blob/master/src/main/scala/li/cil/oc/integration/appeng/NetworkControl.scala
+-- https://github.com/PoroCoco/myaenetwork/blob/main/web.lua
 local o = require 'telem.lib.ObjectModel'
 local t = require 'telem.lib.util'
 
@@ -8,18 +10,26 @@ local MetricCollection  = require 'telem.lib.MetricCollection'
 local MEStorageInputAdapter = o.class(InputAdapter)
 MEStorageInputAdapter.type = 'MEStorageInputAdapter'
 
-function MEStorageInputAdapter:constructor (peripheralName)
+function AE_get_items(me)
+    local isModpackGTNH, storedItems = pcall(me.allItems) --tries the allItems method only available on the GTNH modpack.
+    if isModpackGTNH then
+        return storedItems
+    else
+        return me.getItemsInNetwork()
+    end
+end
+
+function MEStorageInputAdapter:constructor (peripheralID)
     self:super('constructor')
 
     -- TODO this will be a configurable feature later
     self.prefix = 'storage:'
 
-
     -- boot components
     self:setBoot(function ()
         self.components = {}
 
-        self:addComponentByPeripheralID(peripheralName)
+        self:addComponentByPeripheralID(peripheralID)
     end)()
 end
 
@@ -27,8 +37,8 @@ function MEStorageInputAdapter:read ()
     self:boot()
     
     local source, storage = next(self.components)
-    local items = storage.listItems()
-    local fluids = storage.listFluid()
+    local items = AE_get_items(storage)
+    local fluids = storage.getFluidsInNetwork()
 
     local metrics = MetricCollection()
 
@@ -37,7 +47,7 @@ function MEStorageInputAdapter:read ()
     end
 
     for _,v in pairs(fluids) do
-        if v then metrics:insert(Metric({ name = self.prefix .. v.name, value = v.amount / 1000, unit = 'B', source = source })) end
+        if v then metrics:insert(Metric({ name = self.prefix .. v.name, value = v.amount, unit = 'mB', source = source })) end
     end
 
     return metrics

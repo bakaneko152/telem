@@ -1,5 +1,6 @@
 local o = require 'telem.lib.ObjectModel'
 local t = require 'telem.lib.util'
+local component = require("component")
 
 local InputAdapter = o.class()
 InputAdapter.type = 'InputAdapter'
@@ -39,7 +40,7 @@ function InputAdapter:setAsyncCycleHandler(proc)
 end
 
 function InputAdapter:addComponentByPeripheralID (id)
-    local tempComponent = peripheral.wrap(id)
+    local tempComponent = component.proxy(id)
 
     assert(tempComponent, 'Could not find peripheral ID ' .. id)
 
@@ -49,7 +50,14 @@ end
 function InputAdapter:addComponentByPeripheralType (type)
     local key = type .. '_' .. #{self.components}
 
-    local tempComponent = peripheral.find(type)
+    -- local tempComponent = component.find(type)
+    local tempComponent = {}
+    for address, _ in component.list(type, false) do
+        table.insert(tempComponent, component.proxy(address))
+    end
+    if next(tempComponent) == nil then
+        tempComponent=nil
+     end
 
     assert(tempComponent, 'Could not find peripheral type ' .. type)
 

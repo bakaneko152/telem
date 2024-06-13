@@ -1,5 +1,5 @@
 -- TODO write my own pretty_print
-local pretty = require 'cc.pretty' or { pretty_print = print }
+local pretty = { pretty_print = print }
 
 local function tsleep(num)
     local sec = tonumber(os.clock() + num)
@@ -124,6 +124,29 @@ local function indexOf (tab, value)
     return -1
 end
 
+local function list2table(...)
+	return {...}
+end
+
+local function table2thread(functable)
+    local thread = require("thread")
+    local threadtable = {}
+    for _,t in ipairs(functable) do
+        table.insert(threadtable, thread.create(t))
+    end
+    return threadtable
+end
+
+local function list2thread(...)
+    local thread = require("thread")
+    --local tb = {...}
+    local threadtable = {}
+    for _,t in ipairs({ ... }) do
+        table.insert(threadtable, thread.create(t))
+    end
+    return threadtable
+end
+
 return {
     log = log,
     err = err,
@@ -133,5 +156,8 @@ return {
     shortnum = shortnum,
     shortnum2 = shortnum2,
     constrainAppend = constrainAppend,
-    indexOf = indexOf
+    indexOf = indexOf,
+    list2table = list2table,
+    table2thread = table2thread,
+    list2thread = list2thread
 }

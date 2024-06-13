@@ -2,17 +2,13 @@
 outline: deep
 ---
 
-# Item Storage Input <RepoLink path="lib/input/ItemStorageInputAdapter.lua" />
+# Item Storage Transposer Input <RepoLink path="lib/input/ItemStorageTransposerInputAdapter.lua" />
 
 ```lua
-telem.input.itemStorage (peripheralID: string, side: sides.side)
+telem.input.itemStorageTransposer (peripheralID: string, side: sides.side)
 ```
 
-::: warning Low Efficiency
-Recommend **[Basalt 1.7+](/reference/input/itemStorageTransposer)**.
-:::
-
-Requires **[Inventory Controller Upgrade](https://ocdoc.cil.li/item:inventory_controller_upgrade)**.
+Requires **[Transposer](https://ocdoc.cil.li/block:transposer)**.
 This adapter produces a metric for each item ID in an item storage peripheral (chest, etc.), with the metric name being the item ID and the value being the total number of that item in storage.
 
 ## Usage
@@ -22,7 +18,7 @@ local telem = require("telem")
 local sides = require("sides")
 
 local backplane = telem.backplane()
-  :addInput('my_items', telem.input.itemStorage('93bfd57c-f31e-4041-966a-e6657ff1391f',sides.south))
+  :addInput('my_items', telem.input.itemStorageTransposer('93bfd57c-f31e-4041-966a-e6657ff1391f',sides.south))
   :cycleEvery(1)()
 ```
 

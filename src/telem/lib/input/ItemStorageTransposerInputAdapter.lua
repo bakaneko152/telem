@@ -5,10 +5,10 @@ local InputAdapter      = require 'telem.lib.InputAdapter'
 local Metric            = require 'telem.lib.Metric'
 local MetricCollection  = require 'telem.lib.MetricCollection'
 
-local ItemStorageInputAdapter = o.class(InputAdapter)
-ItemStorageInputAdapter.type = 'ItemStorageInputAdapter'
+local ItemStorageTransposerInputAdapter = o.class(InputAdapter)
+ItemStorageTransposerInputAdapter.type = 'ItemStorageTransposerInputAdapter'
 
-function ItemStorageInputAdapter:constructor (peripheralID,side)
+function ItemStorageTransposerInputAdapter:constructor (peripheralID,side)
     self:super('constructor')
 
     -- TODO this will be a configurable feature later
@@ -24,26 +24,19 @@ function ItemStorageInputAdapter:constructor (peripheralID,side)
     end)()
 end
 
-function ItemStorageInputAdapter:read ()
+function ItemStorageTransposerInputAdapter:read ()
     self:boot()
     
     local source, itemStorage = next(self.components)
-
-    local storagesize = itemStorage.getInventorySize(self.inputside)
-    if storagesize==nil then
-        self:dlog('ItemStorageInputAdapter:read :: no inventory, retrying next cycle')
-        return MetricCollection()
-    end
-
     local tempMetrics = {}
-
-    for i=1, storagesize do
-		local item = itemStorage.getStackInSlot(self.inputside, i)
-		if item ~= nil then
+    local stacksIterator = itemStorage.getAllStacks(self.inputside)
+    
+    for item in stacksIterator do
+        if item then
             local prefixkey = self.prefix .. item.name
-            tempMetrics[prefixkey] = (tempMetrics[prefixkey] or 0) + item.size
-		end
-	end
+            tempMetrics[prefixkey] = (tempMetrics[prefixkey] or 0) + item.count
+        end
+    end
 
     local metrics = MetricCollection()
 
@@ -54,4 +47,4 @@ function ItemStorageInputAdapter:read ()
     return metrics
 end
 
-return ItemStorageInputAdapter
+return ItemStorageTransposerInputAdapter
