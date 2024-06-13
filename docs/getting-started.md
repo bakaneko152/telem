@@ -9,7 +9,9 @@ outline: deep
 This runs the installer. You can choose between a minified release (two smallest files), a packaged release (two readable files), or a full source release (many readable files).
 
 ```bash
-
+pastebin run -f paUSHQQC bakaneko152 telem master src/telem
+mkdir /home/lib
+mv /telem /home/lib/telem
 ```
 
 Resources will be installed to a `telem` folder in the current directory. A simple `require()` will load the library.
