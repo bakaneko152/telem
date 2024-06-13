@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Secure Modem Input <RepoLink path="lib/input/ModemInputAdapter.lua" />
+# Modem Input <RepoLink path="lib/input/ModemInputAdapter.lua" />
 
 ```lua
 telem.input.modem (address: string)
