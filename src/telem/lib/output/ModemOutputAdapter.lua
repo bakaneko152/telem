@@ -8,7 +8,7 @@ local MetricCollection  = require 'telem.lib.MetricCollection'
 local textutils = require 'telem.lib.textutils'
 local component = require('component')
 local event = require ('event')
-local modem = component.modem
+local modem
 
 local ModemOutputAdapter = o.class(OutputAdapter)
 ModemOutputAdapter.type = 'ModemOutputAdapter'
@@ -18,6 +18,7 @@ ModemOutputAdapter.port = 41696
 function ModemOutputAdapter:constructor (address)
     self:super('constructor')
 
+    modem = component.modem
     self.sendAddres=address
 
     self:dlog('ModemOutput:boot :: Boot complete.')

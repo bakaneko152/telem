@@ -33,8 +33,14 @@ function ItemStorageTransposerInputAdapter:read ()
     
     for item in stacksIterator do
         if item then
-            local prefixkey = self.prefix .. item.name
-            tempMetrics[prefixkey] = (tempMetrics[prefixkey] or 0) + item.count
+            if item.name ~= nil then
+                local prefixkey = self.prefix .. item.name
+                local itemcount = 0
+                if item.count ~= nil then
+                    itemcount = item.count
+                end
+                tempMetrics[prefixkey] = (tempMetrics[prefixkey] or 0) + itemcount
+            end
         end
     end
 

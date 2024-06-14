@@ -10,7 +10,7 @@ local textutils = require 'telem.lib.textutils'
 
 local component = require('component')
 local event = require ('event')
-local modem = component.modem
+local modem
 
 local ModemInputAdapter = o.class(InputAdapter)
 ModemInputAdapter.type = 'ModemInputAdapter'
@@ -18,6 +18,7 @@ ModemInputAdapter.port = 41696
 
 function ModemInputAdapter:constructor (address)
     self:super('constructor')
+    modem =  component.modem
 
     self.inputAddress = address
     self.receiveTimeout = 1
