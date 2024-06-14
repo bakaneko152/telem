@@ -36,8 +36,8 @@ function ItemStorageTransposerInputAdapter:read ()
             if item.name ~= nil then
                 local prefixkey = self.prefix .. item.name
                 local itemcount = 0
-                if item.count ~= nil then
-                    itemcount = item.count
+                if item.size ~= nil then
+                    itemcount = item.size
                 end
                 tempMetrics[prefixkey] = (tempMetrics[prefixkey] or 0) + itemcount
             end
