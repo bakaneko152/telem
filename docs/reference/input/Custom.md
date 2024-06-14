@@ -16,7 +16,7 @@ This adapter wraps a user-provided function for custom input implementations. Ne
 Internally, the provided function is wrapped in a [MetricCollection](/reference/MetricCollection) constructor, so anything that works with a MetricCollection constructor should work as a return value.
 
 ```lua{4-20}
-local telem = require 'telem'
+local telem = require('telem')
 
 local backplane = telem.backplane()
   :addInput('custom_short', telem.input.custom(function ()

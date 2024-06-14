@@ -23,7 +23,7 @@ Items that are craftable but not stored are not included in the metrics.
 ## Usage
 
 ```lua
-local telem = require 'telem'
+local telem = require('telem')
 
 local backplane = telem.backplane()
   :addInput('my_refined', telem.input.refinedStorage('rsBridge_0'))

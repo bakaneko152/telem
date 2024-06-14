@@ -46,7 +46,7 @@ The format is `(unitScale)(unit)`, where `unitScale` is an integer greater than 
 ## Usage
 
 ```lua{12}
-local telem = require 'telem'
+local telem = require('telem')
 local mw = telem.middleware
 
 local state = 0

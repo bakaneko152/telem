@@ -41,7 +41,7 @@ The provided function is used as a metric consumer. Internally, `func` is called
 ## Usage
 
 ```lua{16-20}
-local telem = require 'telem'
+local telem = require('telem')
 
 local backplane = telem.backplane()
   :addInput('hello_in', telem.input.helloWorld(123))

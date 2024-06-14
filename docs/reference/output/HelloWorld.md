@@ -13,7 +13,7 @@ Writes all metrics out in a reduced format to the terminal, primarily serving as
 ## Usage
 
 ```lua{5}
-local telem = require 'telem'
+local telem = require('telem')
 
 local backplane = telem.backplane()
   :addInput('my_hello', telem.input.helloWorld(123))

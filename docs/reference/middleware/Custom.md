@@ -26,7 +26,7 @@ This middleware wraps a user-provided function for custom middleware implementat
 ## Usage
 
 ```lua{25-41}
-local telem = require 'telem'
+local telem = require('telem')
 local mw = telem.middleware
 
 local fluent = require('telem.vendor').fluent

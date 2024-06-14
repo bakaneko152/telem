@@ -13,7 +13,7 @@ Sorts the metrics in a collection by name.
 ## Usage
 
 ```lua{13}
-local telem = require 'telem'
+local telem = require('telem')
 local mw = telem.middleware
 
 local backplane = telem.backplane()

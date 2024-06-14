@@ -76,7 +76,7 @@ There are two Metric constructor signatures. Both only require a `name` and `val
     This constructor will create a metric with a specified name and value.
 
     ```lua
-    local telem = require 'telem'
+    local telem = require('telem')
 
     local simpleMetric = telem.metric('metric_name', 123)
     ```
@@ -86,7 +86,7 @@ There are two Metric constructor signatures. Both only require a `name` and `val
     This constructor will create a metric using a table of properties, of which only `name` and `value` are required.
 
     ```lua
-    local telem = require 'telem'
+    local telem = require('telem')
 
     local detailedMetric1 = telem.metric({
       name = 'speed',

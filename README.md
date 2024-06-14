@@ -1,9 +1,9 @@
 # Telem - Trivial Extract and Load Engine for Minecraft
 
 
-It's a modified telem to work with OpenComputers that I use on my private server that I play with my friends.
-
-Limited features available.
+**It's a modified Telem that works with OpenComputers.**  
+**I use it on my private server that I play with my friends.**  
+**Limited features available.**
 
 
 Tired of creating complex logic to monitor inventory or production? Want something more modern, modular, and scalable? Want something that can empower a dashboard like the screenshot below? You have come to the right place.

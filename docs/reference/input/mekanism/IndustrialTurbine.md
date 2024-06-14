@@ -50,7 +50,7 @@ List of metric categories to query. The value `"*"` can be used to include all c
 -- LUT for mekturbine:dumping_mode metric
 local DUMPING_MODES = 
 
-local telem = require 'telem'
+local telem = require('telem')
 
 local backplane = telem.backplane()
 	:addInput('my_turbine', telem.input.mekanism.industrialTurbine('right', '*'))

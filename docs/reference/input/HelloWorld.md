@@ -13,7 +13,7 @@ This adapter produces a single metric with a specified static value, primarily s
 ## Usage
 
 ```lua{4}
-local telem = require 'telem'
+local telem = require('telem')
 
 local backplane = telem.backplane()
   :addInput('my_hello', telem.input.helloWorld(123))

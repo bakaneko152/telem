@@ -79,7 +79,7 @@ Foreground color, one of `colors.*`
 ## Usage
 
 ```lua{14}
-local telem = require 'telem'
+local telem = require('telem')
 
 local mon = peripheral.wrap('top')
 mon.setTextScale(0.5)

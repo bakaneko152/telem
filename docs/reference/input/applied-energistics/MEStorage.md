@@ -12,8 +12,8 @@ telem.input.meStorage (peripheralID: string)
 Requires **Applied Energistics 2**.
 :::
 
-This adapter produces a metric for each item and fluid ID in an ME storage network, with the metric names being the IDs, and the value being the total amount of that item/fluid in storage.
-Peripheral must be [ME Controller](https://appliedenergistics.org/ae2-site-archive/ME-Controller/index.html) or [
+This adapter produces a metric for each item and fluid ID in an ME storage network, with the metric names being the IDs, and the value being the total amount of that item/fluid in storage.  
+Need [ME Controller](https://appliedenergistics.org/ae2-site-archive/ME-Controller/index.html) or [
 ME Interface](https://appliedenergistics.org/ae2-site-archive/ME-Interface/index.html).
 
 ~~Items that are craftable but not stored are not included in the metrics.~~
@@ -21,7 +21,7 @@ ME Interface](https://appliedenergistics.org/ae2-site-archive/ME-Interface/index
 ## Usage
 
 ```lua{4}
-local telem = require 'telem'
+local telem = require('telem')
 
 local backplane = telem.backplane()
   :addInput('my_me', telem.input.meStorage('meBridge_0'))

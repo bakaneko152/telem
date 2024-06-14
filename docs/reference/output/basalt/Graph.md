@@ -70,7 +70,7 @@ The value label is designed to shorten itself using SI suffixes to fit within th
 ## Usage
 
 ```lua{15}
-local telem = require 'telem'
+local telem = require('telem')
 local basalt = require 'basalt'
 
 -- increase monitor resolution

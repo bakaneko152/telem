@@ -35,7 +35,7 @@ There are two MetricCollection constructor signatures. One requires a table of n
     Create a new collection from a provided table, using the table keys as metric names and the values as the metric values. If the use case only requires name and value on [Metric](Metric) elements, this is the most concise way to instantiate a MetricCollection.
 
     ```lua
-    local telem = require 'telem'
+    local telem = require('telem')
 
     local simpleCollection = telem.metricCollection({
       metric_name = 123,
@@ -48,7 +48,7 @@ There are two MetricCollection constructor signatures. One requires a table of n
     Create a new collection from the provided [Metric](Metric) arguments.
 
     ```lua
-    local telem = require 'telem'
+    local telem = require('telem')
 
     local detailedCollection = telem.metricCollection(
       telem.metric('metric_name', 123),
@@ -83,7 +83,7 @@ Returns the first [Metric](Metric) in this collection (in `pairs()` order) that 
 ## Usage
 
 ```lua
-local telem = require 'telem'
+local telem = require('telem')
 
 -- Peripheral setup:
 --  * Chest contains 5 Redstone Dust and 1 Oak Log

@@ -65,7 +65,7 @@ If the name label overflows the available width, it will auto-scroll to the left
 
 ::: code-group
 ```lua{12} [MonitorFrame]
-local telem = require 'telem'
+local telem = require('telem')
 local basalt = require 'basalt'
 
 local monitor = basalt.addMonitor():setMonitor('top')
@@ -87,7 +87,7 @@ parallel.waitForAny(
 )
 ```
 ```lua{12} [MonitorFrame long label]
-local telem = require 'telem'
+local telem = require('telem')
 local basalt = require 'basalt'
 
 local monitor = basalt.addMonitor():setMonitor('top')

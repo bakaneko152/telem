@@ -47,7 +47,7 @@ List of metric categories to query. The value `"*"` can be used to include all c
 ## Usage
 
 ```lua{4}
-local telem = require 'telem'
+local telem = require('telem')
 
 local backplane = telem.backplane()
 	:addInput('my_fission', telem.input.mekanism.fissionReactor('right', '*'))

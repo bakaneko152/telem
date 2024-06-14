@@ -34,7 +34,7 @@ Force the middleware to process metrics from other middleware (`source = 'middle
 ## Usage
 
 ```lua{8}
-local telem = require 'telem'
+local telem = require('telem')
 local mw = telem.middleware
 
 local backplane = telem.backplane()

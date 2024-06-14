@@ -29,7 +29,7 @@ This guide assumes you already have a Grafana Cloud account ready to go. If not,
    ![Grafana Influx push credentials](/assets/grafana-cloud-infux-creds.png)
 3. In your script, add your authentication information (`authGrafana`) and provide to `telem.output.grafana`:
    ```lua{3-6,11}
-   local telem = require 'telem'
+   local telem = require('telem')
 
    local authGrafana = {
      endpoint = 'https://influx-prod-xyz.grafana.net/api/v1/push/influx/write',

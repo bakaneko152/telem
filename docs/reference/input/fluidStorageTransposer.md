@@ -13,7 +13,7 @@ This adapter produces a metric for each fluid ID in a fluid storage peripheral (
 ## Usage
 
 ```lua{4}
-local telem = require 'telem'
+local telem = require('telem')
 local sides = require("sides")
 
 local backplane = telem.backplane()
