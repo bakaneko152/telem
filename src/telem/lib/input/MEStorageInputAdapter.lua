@@ -23,7 +23,7 @@ function MEStorageInputAdapter:constructor (peripheralID)
     self:super('constructor')
 
     -- TODO this will be a configurable feature later
-    self.prefix = 'storage:'
+    self.prefix = 'aestorage:'
 
     -- boot components
     self:setBoot(function ()
