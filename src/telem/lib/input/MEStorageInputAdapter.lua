@@ -13,9 +13,9 @@ MEStorageInputAdapter.type = 'MEStorageInputAdapter'
 function AE_get_items(me)
     local isModpackGTNH, storedItems = pcall(me.allItems) --tries the allItems method only available on the GTNH modpack.
     if isModpackGTNH then
-        return storedItems
+        return isModpackGTNH,storedItems
     else
-        return me.getItemsInNetwork()
+        return isModpackGTNH,me.getItemsInNetwork()
     end
 end
 
@@ -37,14 +37,27 @@ function MEStorageInputAdapter:read ()
     self:boot()
     
     local source, storage = next(self.components)
-    local items = AE_get_items(storage)
+    local isModpackGTNH,items = AE_get_items(storage)
     local fluids = storage.getFluidsInNetwork()
 
     local metrics = MetricCollection()
 
-    for _,v in pairs(items) do
-        if v then metrics:insert(Metric({ name = self.prefix .. v.name, value = v.amount, unit = 'item', source = source })) end
+    if isModpackGTNH then
+        for v in items do
+            if type(v) == 'table' then
+                metrics:insert(Metric({ name = self.prefix .. v.name, value = v.size, unit = 'item', source = source })) 
+            end
+        end
+    else
+        for _,v in pairs(items) do
+            if v then 
+                if v.name ~=nil then
+                    metrics:insert(Metric({ name = self.prefix .. v.name, value = v.size, unit = 'item', source = source })) 
+                end
+            end
+        end
     end
+
 
     for _,v in pairs(fluids) do
         if v then metrics:insert(Metric({ name = self.prefix .. v.name, value = v.amount, unit = 'mB', source = source })) end
