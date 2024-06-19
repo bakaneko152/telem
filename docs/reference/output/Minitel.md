@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Minitel Modem Output <RepoLink path="lib/output/MinitelModemOutputAdapter.lua" />
+# Minitel Output <RepoLink path="lib/output/MinitelModemOutputAdapter.lua" />
 
 ```lua
 telem.output.minitel (hostname: string)
