@@ -6,5 +6,6 @@ return {
     grafana = require 'telem.lib.output.GrafanaOutputAdapter',
 
     -- Modem
-    modem = require 'telem.lib.output.ModemOutputAdapter'
+    modem = require 'telem.lib.output.ModemOutputAdapter',
+    minitel = require 'telem.lib.output.MinitelModemOutputAdapter'
 }

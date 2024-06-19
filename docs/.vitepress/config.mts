@@ -44,6 +44,7 @@ export default defineConfig({
           { text: 'Item Storage Transposer', link: '/reference/input/ItemStorageTransposer' },
           { text: 'Fluid Storage Transposer', link: '/reference/input/fluidStorageTransposer' },
           { text: 'Modem', link: '/reference/input/Modem' },
+          { text: 'Minitel', link: '/reference/input/Minitel' },
           { text: 'Custom', link: '/reference/input/Custom' },
           {
             text: 'Applied Energistics',
@@ -86,6 +87,7 @@ export default defineConfig({
           { text: 'Line Chart', link: '/reference/output/ChartLine' },
           { text: 'Area Chart', link: '/reference/output/ChartArea' },
           { text: 'Modem', link: '/reference/output/Modem' },
+          { text: 'Minitel', link: '/reference/output/Minitel' },
           { text: 'Custom', link: '/reference/output/Custom' },
           { text: 'Grafana', link: '/reference/output/Grafana' },
           {

@@ -16,5 +16,6 @@ return {
     },
 
     -- modem
-    modem = require 'telem.lib.input.ModemInputAdapter'
+    modem = require 'telem.lib.input.ModemInputAdapter',
+    minitel = require 'telem.lib.input.MinitelModemInputAdapter'
 }
